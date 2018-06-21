@@ -3,7 +3,7 @@
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
   var Tar = require('./tar.js');
   var download = require('./download.js');
-  var GIF = require('./gif.js');
+//   var GIF = require('./gif.js');
 }
 
 "use strict";
@@ -498,7 +498,7 @@ CCGIFEncoder.prototype.save = function( callback ) {
 	var url = window.URL.createObjectURL( blob );
 	callback( url );
 
-}*/
+}
 
 function CCGIFEncoder( settings ) {
 
@@ -553,11 +553,11 @@ CCGIFEncoder.prototype.add = function( canvas ) {
 	this.encoder.addFrame( this.ctx, { copy: true, delay: this.settings.step } );
 	this.step();
 
-	/*this.encoder.setSize( canvas.width, canvas.height );
+	this.encoder.setSize( canvas.width, canvas.height );
 	var readBuffer = new Uint8Array(canvas.width * canvas.height * 4);
 	var context = canvas.getContext( 'webgl' );
 	context.readPixels(0, 0, canvas.width, canvas.height, context.RGBA, context.UNSIGNED_BYTE, readBuffer);
-	this.encoder.addFrame( readBuffer, true );*/
+	this.encoder.addFrame( readBuffer, true );
 
 }
 
@@ -568,6 +568,7 @@ CCGIFEncoder.prototype.save = function( callback ) {
 	this.encoder.render();
 
 }
+*/
 
 function CCapture( settings ) {
 
@@ -618,7 +619,7 @@ function CCapture( settings ) {
 	_log( 'Step is set to ' + _settings.step + 'ms' );
 
     var _encoders = {
-		gif: CCGIFEncoder,
+// 		gif: CCGIFEncoder,
 		webm: CCWebMEncoder,
 		ffmpegserver: CCFFMpegServerEncoder,
 		png: CCPNGEncoder,
